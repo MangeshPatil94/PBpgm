@@ -16,8 +16,21 @@ public static void main(String[] args) throws InterruptedException
 	driver.manage().window().maximize();
     driver.get("https://opensource-demo.orangehrmlive.com/web/index.php/auth/login");
     Thread.sleep(2000);
-	driver.findElement(By.xpath("//input[@name=\"username\"]")).sendKeys("Admin");
-	driver.findElement(By.xpath("//input[@type=\"password\"]")).sendKeys("admin123");
-	driver.findElement(By.xpath("//button[@type=\"submit\"]")).click();
+    //driver.c
+//	driver.findElement(By.xpath("//input[@name=\"username\"]")).sendKeys("Admin");
+//	driver.findElement(By.xpath("//input[@type=\"password\"]")).sendKeys("admin123");
+	//driver.findElement(By.xpath("//button[@type=\"submit\"]")).click();
+    boolean logo = driver.findElement(By.xpath("//img[@alt=\"company-branding\"]")).isDisplayed();
+    boolean button = driver.findElement(By.xpath("//button[@type=\"submit\"]")).isEnabled();
+    if(logo==true)
+    {
+    	System.out.println("displayed");
+    }
+    else
+    {
+    	System.out.println("not Enabled");
+    }
+    String title = driver.getTitle();
+    System.out.println(title);
 }
 }
